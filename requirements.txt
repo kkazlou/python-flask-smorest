@@ -1,3 +1,4 @@
 Flask
 flask-smorest
 python-dotenv
+marshmallow
