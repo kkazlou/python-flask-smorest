@@ -1,12 +1,9 @@
 @baseUrl=http://127.0.0.1:5001
 
-### /store Get all store data
+### /store Get all stores
 GET {{baseUrl}}/store
 
-### /store/<store_id>
-GET {{baseUrl}}/store/123
-
-### /store/<store_id>
+### /store/<store_id> Get store by id
 GET {{baseUrl}}/store/91621cb9426e46dc9ce18b74714b7cf0
 
 ### /store Add a new store
@@ -17,21 +14,21 @@ content-type: application/json
     "name": "My Store 1"
 }
 
-### /store Add a new store
-POST {{baseUrl}}/store
+### /store/<store_id> Update store
+PUT {{baseUrl}}/store/91621cb9426e46dc9ce18b74714b7cf0
 content-type: application/json
 
 {
-    "name": "My Store 2"
+    "name": "My Store 555",
+    "description:": "Store description"
 }
 
+### /store/<store_id> Delete store
+DELETE {{baseUrl}}/store/91621cb9426e46dc9ce18b74714b7cf0
 
 
-### /item Get all items data
+### /item Get all items
 GET {{baseUrl}}/item
-
-### /item/<item_id> Get item by id
-GET {{baseUrl}}/item/123
 
 ### /item/<item_id> Get item by id
 GET {{baseUrl}}/item/5265e80d3b3d4ba0af3aebc97a4f5b02
@@ -46,21 +43,15 @@ content-type: application/json
     "store_id": "bc7d9830947144eba9d81b04c301d626"
 }
 
-### /item Add a new item
-POST {{baseUrl}}/item
+### /item Update item
+PUT {{baseUrl}}/item/5265e80d3b3d4ba0af3aebc97a4f5b02
 content-type: application/json
 
 {
     "name": "Table",
-    "price": 17.99,
-    "store_id": "abc"
+    "price": 15,
+    "description:": "Item description"
 }
 
-### /item Add a new item
-POST {{baseUrl}}/item
-content-type: application/json
-
-{
-    "name": "Chair",
-    "price": 12.50
-}
+### /item/<item_id> Delete item
+DELETE {{baseUrl}}/item/5265e80d3b3d4ba0af3aebc97a4f5b02
